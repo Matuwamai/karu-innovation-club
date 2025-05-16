@@ -1,15 +1,17 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  FaHome, 
-  FaInfoCircle, 
-  FaUsers, 
-  FaChevronDown, 
-  FaCode, 
-  FaShieldAlt, 
-  FaLink, 
-  FaBrain, 
-  FaRobot, 
+import logo from "../public/images/Innovation Club New Logo-Website Logo.png"
+import {
+  FaHome,
+  FaInfoCircle,
+  FaUsers,
+  FaChevronDown,
+  FaCode,
+  FaShieldAlt,
+  FaLink,
+  FaBrain,
+  FaRobot,
   FaMicrochip,
   FaLightbulb,
   FaCalendarAlt,
@@ -19,25 +21,25 @@ import {
   FaBars
 } from 'react-icons/fa';
 import { useState } from 'react';
+import {  useRouter } from "next/navigation";
 
-export default function Header() {
+export default function Navbar() {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCommunitiesOpen, setIsCommunitiesOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-md">
       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/static/images/Innovation Club New Logo-Website Logo.png"
+            src={logo}
             alt="Innovation Club Logo"
             width={120}
             height={60}
             className="h-12 w-auto"
           />
         </Link>
-
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-6">
           <ul className="flex space-x-6">
@@ -49,14 +51,17 @@ export default function Header() {
             </li>
 
             <li className="relative">
-              <Link href="/about" className="flex items-center text-gray-700 hover:text-amber-400 transition">
+              <button
+                onClick={() => router.push('/about')}
+                className="flex items-center text-gray-700 hover:text-amber-400 transition"
+              >
                 <FaInfoCircle className="mr-1" />
                 <span>About</span>
-              </Link>
+              </button>
             </li>
 
             <li className="relative group">
-              <button 
+              <button
                 className="flex items-center text-gray-700 hover:text-amber-400 transition"
                 onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
               >
@@ -64,7 +69,7 @@ export default function Header() {
                 <span>Communities</span>
                 <FaChevronDown className="ml-1 text-xs" />
               </button>
-              
+
               {/* Dropdown Menu */}
               <ul className={`absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-10 ${isCommunitiesOpen ? 'block' : 'hidden'} group-hover:block`}>
                 <li>
@@ -145,7 +150,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="lg:hidden text-gray-700 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -169,7 +174,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <button 
+            <button
               className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-blue-600"
               onClick={() => setIsCommunitiesOpen(!isCommunitiesOpen)}
             >

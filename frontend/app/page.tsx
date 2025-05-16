@@ -5,8 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { SVGProps } from "react";
-import Footer from "@/components/Footer";
-import Header from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 
 // Icons
@@ -65,7 +63,6 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-[#fefefe]">
       {/* Navigation */}
       
-<Header/>
       {/* Hero Section */}
      
 <HeroSection />
@@ -132,7 +129,6 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-     <Footer />
     </div>
   );
 }
