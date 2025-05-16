@@ -51,14 +51,14 @@ export default function Navbar() {
             </li>
 
             <li className="relative">
-              <button
-                onClick={() => router.push('/about')}
-                className="flex items-center text-gray-700 hover:text-amber-400 transition"
-              >
-                <FaInfoCircle className="mr-1" />
-                <span>About</span>
-              </button>
-            </li>
+      <Link
+        href="/about"
+        className="flex items-center text-gray-700 hover:text-amber-400 transition"
+      >
+        <FaInfoCircle className="mr-1" />
+        <span>About</span>
+      </Link>
+    </li>
 
             <li className="relative group">
               <button
@@ -133,7 +133,7 @@ export default function Navbar() {
             </li>
 
             <li className="relative">
-              <Link href="/contact-us" className="flex items-center text-gray-700 hover:text-blue-600 transition">
+              <Link href="/contact" className="flex items-center text-gray-700 hover:text-blue-600 transition">
                 <FaEnvelope className="mr-1" />
                 <span>Contact</span>
               </Link>

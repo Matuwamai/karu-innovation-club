@@ -1,8 +1,21 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { LucideIcon, Target, Eye, Lightbulb, Handshake, GraduationCap, Users, TrendingUp, Globe } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Lightbulb,
+  Handshake,
+  GraduationCap,
+  Users,
+  TrendingUp,
+  Trophy,
+  Briefcase,
+  BookOpen,
+  Globe
+} from "lucide-react";
 import Image from "next/image";
+
 
 export default function AboutPage() {
   // Value icons mapping
