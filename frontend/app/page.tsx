@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { SVGProps } from "react";
 import Footer from "@/components/Footer";
+import Header from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
 
 // Icons
 const CodeIcon = ({ className }: SVGProps<SVGSVGElement>) => (
@@ -62,44 +64,11 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fefefe]">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-[#90908e]/20">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-[#0e7d44]">Karatina IC</span>
-          </Link>
-          <div className="flex gap-4">
-            <Button variant="ghost" className="text-[#0e7d44] hover:bg-[#0e7d44]/10">
-              <Link href="/login">Sign In</Link>
-            </Button>
-            <Button className="bg-[#b28d49] hover:bg-[#9a7b3d] text-white">
-              <Link href="/join">Join Now</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
-
+      
+<Header/>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0e7d44] to-[#0a5c33] text-white py-20 md:py-28">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Innovate. Collaborate. Grow.</h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8">
-            Join Karatina Innovation Club and build the future with like-minded tech enthusiasts.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button className="bg-[#b28d49] hover:bg-[#9a7b3d] text-white px-8 py-6 text-lg">
-              <Link href="/join" className="flex items-center">
-                Get Started <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
-              <Link href="/about" className="flex items-center">
-                Learn More
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
+     
+<HeroSection />
       {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
